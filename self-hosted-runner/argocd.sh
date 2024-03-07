@@ -1,3 +1,6 @@
+# Connect to the cluster (kubeconfig update)
+aws eks --region us-east-1 update-kubeconfig --name EKS_CLOUD
+
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.4.7/manifests/install.yaml
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
